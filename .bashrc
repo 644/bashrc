@@ -65,13 +65,6 @@ fpn() {
 		awk '/\(Installed\)/{skip=2}; (skip && skip--) {next} {print}'
 }
 
-# Search non-installed packages with yay
-fpn() {
-	declare -r search=${1?No search term given}
-	yay --color=always -Ss -- "${search}" |\
-		awk '/\(Installed\)/{skip=2}; (skip && skip--) {next} {print}'
-}
-
 # Search installed packages with yay
 fpi() {
 	declare -r search=${1?No search term given}
