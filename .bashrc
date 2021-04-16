@@ -2,11 +2,13 @@
 # SET GLOBAL VARIABLES AND SET SETTINGS
 shopt -s cdspell
 shopt -s autocd
+shopt -s histappend
 declare -x VISUAL=vim EDITOR=vim BROWSER=firefox
 declare -x TIMEFORMAT=$'\nreal\t%R\nuser\t%U\nsys\t%S\ncpu\t%P\n'
 declare -x PROMPT_DIRTRIM=2
 declare -x PS1="[\[\e[31m\]\u\[\e[m\]\[\e[30m\]@\[\e[m\]\[\e[30m\]\H\[\e[m\] \[\e[34m\]\w\[\e[m\]]\[\e[30m\]\$(nonzero_return)\[\e[m\] \[\e[31m\]\\$\[\e[m\] "
 declare -x PS2='->    '
+declare -x HISTSIZE=-1
 
 # FUNCTIONS
 # Print return value of last command if unsuccessful
