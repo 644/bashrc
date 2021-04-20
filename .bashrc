@@ -9,6 +9,7 @@ declare -x PROMPT_DIRTRIM=2
 declare -x PS1="[\[\e[31m\]\u\[\e[m\]\[\e[30m\]@\[\e[m\]\[\e[30m\]\H\[\e[m\] \[\e[34m\]\w\[\e[m\]]\[\e[30m\]\$(nonzero_return)\[\e[m\] \[\e[31m\]\\$\[\e[m\] "
 declare -x PS2='->    '
 declare -x HISTSIZE=-1
+[[ ":${PATH}:" != *":${HOME}/bin:"* ]] && declare -x PATH="${PATH}:${HOME}/bin"
 
 # FUNCTIONS
 # Print return value of last command if unsuccessful
@@ -143,6 +144,3 @@ alias cp='cp -v'
 alias stracespy='strace -e write=1,2 -e trace=write -f -q -p'
 alias k='bgprog kate'
 alias d='bgprog dolphin'
-
-# SET PATH
-PATH="${PATH}:${HOME}/bin"
